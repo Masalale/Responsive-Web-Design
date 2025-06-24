@@ -1,97 +1,67 @@
-// Portfolio Interactive Features
+// Optimized Portfolio Interactive Features
 document.addEventListener('DOMContentLoaded', () => {
-
-    // =================================================================
-    // SMOOTH SCROLLING FOR INTERNAL LINKS
-    // =================================================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.getAttribute('href'));
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // =================================================================
-    // NAVIGATION & ACTIVE SECTION HIGHLIGHTING
-    // =================================================================
+    // Cache DOM elements
     const sections = document.querySelectorAll('section[id]');
     const navName = document.querySelector('.nav-name');
     const navBar = document.querySelector('.nav-bar');
-
-    const sectionColors = {
-        'home': 'var(--burgundy)',
-        'about': 'var(--gold)',
-        'experience': 'var(--burgundy)',
-        'projects': 'var(--gold)',
-        'contact': 'var(--burgundy)'
-    };
-
-    function updateActiveSection() {
-        const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navBar.setAttribute('data-active-section', sectionId);
-                navName.style.color = sectionColors[sectionId] || 'var(--burgundy)';
-                navName.style.textShadow = sectionId === 'home' ? 'none' : '0 1px 2px rgba(17, 16, 15, 0.2)';
-            }
-        });
-    }
-
-    // =================================================================
-    // SCROLL REVEAL ANIMATIONS
-    // =================================================================
     const revealElements = document.querySelectorAll('.section-title, .about-content, .experience-item, .project-card');
-
-    function handleScrollReveal() {
-        const triggerBottom = window.innerHeight * 0.8;
-        revealElements.forEach(element => {
-            if (element.getBoundingClientRect().top < triggerBottom) {
-                element.classList.add('revealed');
-            }
-        });
-    }
-
-    // =================================================================
-    // MOBILE TOUCH INTERACTIONS
-    // =================================================================
     const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('touchstart', () => {
-            projectCards.forEach(c => {
-                if (c !== card) c.classList.remove('touch-hover');
-            });
-            card.classList.toggle('touch-hover');
+
+    // Section colors mapping
+    const sectionColors = ['var(--burgundy)', 'var(--gold)', 'var(--burgundy)', 'var(--gold)', 'var(--burgundy)'];
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(anchor.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // =================================================================
-    // OPTIMIZED SCROLL EVENT HANDLING
-    // =================================================================
-    let scrollTimeout;
-
+    // Combined scroll handler for navigation and reveals
     function handleScroll() {
-        if (scrollTimeout) clearTimeout(scrollTimeout);
+        const scrollY = window.scrollY;
+        const viewHeight = window.innerHeight;
+        const scrollPos = scrollY + viewHeight / 3;
+        const triggerBottom = viewHeight * 0.8;
 
-        scrollTimeout = setTimeout(() => {
-            updateActiveSection();
-            handleScrollReveal();
-        }, 16); // ~60fps
+        // Update active section and reveal elements in one loop
+        sections.forEach((section, index) => {
+            const { offsetTop, offsetHeight, id } = section;
+            
+            // Navigation update
+            if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
+                navBar.setAttribute('data-active-section', id);
+                navName.style.color = sectionColors[index];
+                navName.style.textShadow = id === 'home' ? 'none' : '0 1px 2px rgba(17,16,15,0.2)';
+            }
+        });
+
+        // Reveal animations
+        revealElements.forEach(el => {
+            if (el.getBoundingClientRect().top < triggerBottom) el.classList.add('revealed');
+        });
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Mobile touch interactions
+    projectCards.forEach(card => {
+        card.addEventListener('touchstart', () => {
+            projectCards.forEach(c => c.classList.toggle('touch-hover', c === card));
+        }, { passive: true });
+    });
 
-    // Initialize on load
-    updateActiveSection();
-    handleScrollReveal();
+    // Throttled scroll event
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Initialize
+    handleScroll();
 });
