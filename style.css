@@ -1,6 +1,4 @@
-/* =================================================================
-   FONTS & VARIABLES
-   ================================================================= */
+/* Fonts & Variables */
 
 @font-face {
     font-family: 'Boliens';
@@ -29,9 +27,7 @@
     --shadow-hover: 0 8px 25px rgba(17, 16, 15, 0.15);
 }
 
-/* =================================================================
-   RESET & BASE STYLES
-   ================================================================= */
+/* Reset & Base */
 
 * {
     margin: 0;
@@ -64,17 +60,15 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-/* =================================================================
-   UTILITY CLASSES
-   ================================================================= */
+/* Utilities */
 
-.container {
+.wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.section-title {
+.page-title {
     font-family: var(--font-primary);
     font-size: clamp(2.7rem, 5vw, 4.2rem);
     margin-bottom: 3rem;
@@ -84,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1rem;
 }
 
-.section-title::after {
+.page-title::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -96,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
-.section-title::before {
+.page-title::before {
     content: '';
     position: absolute;
     bottom: -12px;
@@ -123,23 +117,21 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow);
 }
 
-.btn-secondary {
+.btn-outline {
     background-color: transparent;
     color: var(--burgundy);
     border-color: var(--burgundy);
 }
 
-.btn-secondary:hover {
+.btn-outline:hover {
     background-color: var(--burgundy);
     color: var(--cream);
     transform: translateY(-2px);
 }
 
-/* =================================================================
-   NAVIGATION
-   ================================================================= */
+/* Navigation */
 
-.nav-bar {
+.navbar {
     position: fixed;
     top: 1.5rem;
     left: 2rem;
@@ -148,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.nav-name {
+.brand {
     font-family: 'CharimaShareneDemo';
     font-size: clamp(1.5rem, 4vw, 2.2rem);
     color: var(--burgundy);
@@ -156,11 +148,9 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease;
 }
 
-/* =================================================================
-   HERO SECTION
-   ================================================================= */
+/* Hero Section */
 
-.hero {
+.intro {
     height: 100vh;
     background: linear-gradient(135deg, var(--cream) 0%, var(--taupe) 100%);
     display: flex;
@@ -171,9 +161,9 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.hero-container { max-width: 800px; }
+.intro-content { max-width: 800px; }
 
-.hero-title {
+.main-title {
     font-family: var(--font-primary);
     font-size: clamp(2.5rem, 6vw, 5rem);
     color: var(--black);
@@ -182,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 2px 4px rgba(17, 16, 15, 0.1);
 }
 
-.hero-subtitle {
+.tagline {
     font-family: var(--font-primary);
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     color: var(--burgundy);
@@ -190,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.02em;
 }
 
-.hero-description {
+.description {
     font-size: 1.4rem;
     color: var(--sage);
     margin-bottom: 3rem;
@@ -200,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
 }
 
-.hero-cta {
+.cta-buttons {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
@@ -208,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 2rem;
 }
 
-.scroll-indicator {
+.scroll-hint {
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -222,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
 }
 
-.scroll-arrow {
+.arrow {
     width: 20px;
     height: 20px;
     border-right: 2px solid var(--sage);
@@ -237,11 +227,9 @@ h1, h2, h3, h4, h5, h6 {
     60% { transform: rotate(45deg) translateY(-5px); }
 }
 
-/* =================================================================
-   ABOUT & EXPERIENCE SECTIONS
-   ================================================================= */
+/* About & Experience */
 
-.about, .experience {
+.about, .work {
     padding-top: 8rem;
     padding-bottom: 4rem;
     height: 100vh;
@@ -255,13 +243,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 4rem;
 }
 
-.experience {
+.work {
     background: linear-gradient(135deg, var(--cream) 0%, var(--taupe) 100%);
     padding-bottom: 8rem;
     overflow: hidden;
 }
 
-.about-content {
+.content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 5rem;
@@ -269,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 65vh;
 }
 
-.about-text h3 {
+.text-content h3 {
     font-family: var(--font-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -277,16 +265,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 
-.about-text p {
+.text-content p {
     font-size: 1.4rem;
     color: var(--sage);
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
 
-.about-image { display: flex; justify-content: center; }
+.image-content { display: flex; justify-content: center; }
 
-.profile-image {
+.profile-pic {
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -295,25 +283,25 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.profile-image:hover {
+.profile-pic:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-hover);
 }
 
-.experience .container {
+.work .wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.experience-content {
+.work-content {
     display: grid;
     align-items: center;
     min-height: 65vh;
 }
 
-.experience-timeline {
+.timeline {
     max-width: 600px;
     margin: 0 auto;
     flex-grow: 0;
@@ -322,17 +310,17 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-start;
 }
 
-.experience-item {
+.job {
     padding: 1.3rem 0;
     border-bottom: 1px solid rgba(93, 28, 52, 0.1);
     transition: var(--transition);
     text-align: center;
 }
 
-.experience-item:last-child { border-bottom: none; }
-.experience-item:hover { transform: translateY(-2px); }
+.job:last-child { border-bottom: none; }
+.job:hover { transform: translateY(-2px); }
 
-.experience-company {
+.company {
     font-family: var(--font-primary);
     font-size: 1.9rem;
     color: var(--black);
@@ -340,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.02em;
 }
 
-.experience-role {
+.role {
     color: var(--burgundy);
     font-size: 1.3rem;
     font-weight: 500;
@@ -348,17 +336,15 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.5px;
 }
 
-.experience-period {
+.period {
     color: var(--sage);
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
-/* =================================================================
-   PROJECTS SECTION
-   ================================================================= */
+/* Projects */
 
-.projects {
+.portfolio {
     padding-top: 8rem;
     padding-bottom: 4rem;
     background-color: var(--cream);
@@ -369,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: visible;
 }
 
-.projects-grid {
+.portfolio-grid {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -379,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: fadeInUp 0.6s ease-out;
 }
 
-.project-pair {
+.row {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
@@ -391,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.project-card {
+.card {
     background: #fafafa;
     border-radius: 16px;
     padding: 2rem;
@@ -410,21 +396,21 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 280px;
 }
 
-.project-pair:nth-child(1) .project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-pair:nth-child(1) .project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-pair:nth-child(2) .project-card:nth-child(1) { animation-delay: 0.3s; }
-.project-pair:nth-child(2) .project-card:nth-child(2) { animation-delay: 0.4s; }
-.project-pair:nth-child(3) .project-card:nth-child(1) { animation-delay: 0.5s; }
-.project-pair:nth-child(3) .project-card:nth-child(2) { animation-delay: 0.6s; }
+.row:nth-child(1) .card:nth-child(1) { animation-delay: 0.1s; }
+.row:nth-child(1) .card:nth-child(2) { animation-delay: 0.2s; }
+.row:nth-child(2) .card:nth-child(1) { animation-delay: 0.3s; }
+.row:nth-child(2) .card:nth-child(2) { animation-delay: 0.4s; }
+.row:nth-child(3) .card:nth-child(1) { animation-delay: 0.5s; }
+.row:nth-child(3) .card:nth-child(2) { animation-delay: 0.6s; }
 
 @keyframes slideInCard {
     from { opacity: 0; transform: translateY(50px) scale(0.95); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.project-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); }
+.card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); }
 
-.project-card::before {
+.card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -436,9 +422,9 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease;
 }
 
-.project-card:hover::before { opacity: 1; }
+.card:hover::before { opacity: 1; }
 
-.project-header {
+.card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -447,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
 }
 
-.project-header h3 {
+.card-header h3 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333;
@@ -457,14 +443,14 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
 }
 
-.project-links {
+.links {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.project-link {
+.link {
     background-color: #333;
     color: white;
     padding: 0.6rem 1.2rem;
@@ -476,12 +462,12 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
 }
 
-.project-link:hover {
+.link:hover {
     background-color: #555;
     transform: translateY(-1px);
 }
 
-.project-description {
+.card-description {
     color: #666;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -489,13 +475,13 @@ h1, h2, h3, h4, h5, h6 {
     flex-grow: 1;
 }
 
-.project-tech {
+.tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.tech-tag {
+.tag {
     background: rgba(93, 28, 52, 0.1);
     color: var(--burgundy);
     border: 1px solid rgba(93, 28, 52, 0.2);
@@ -506,15 +492,13 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-.tech-tag:hover {
+.tag:hover {
     background: var(--burgundy);
     color: white;
     transform: translateY(-1px);
 }
 
-/* =================================================================
-   CONTACT SECTION
-   ================================================================= */
+/* Contact */
 
 .contact {
     padding: 6rem 0;
@@ -534,7 +518,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-.contact-links {
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -543,7 +527,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px;
 }
 
-.contact-link {
+.social-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -560,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 160px;
 }
 
-.contact-link:hover {
+.social-link:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
     background-color: var(--burgundy);
@@ -568,9 +552,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--gold);
 }
 
-/* =================================================================
-   FOOTER SECTION
-   ================================================================= */
+/* Footer */
 
 .footer {
     background-color: var(--taupe);
@@ -591,46 +573,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-content p {
-    margin: 0;
-    font-size: 1rem;
-    opacity: 0.8;
+    opacity: 0.7;
     color: var(--black);
 }
 
-/* =================================================================
-   RESPONSIVE DESIGN
-   ================================================================= */
+/* Mobile & Tablet */
 
 @media (max-width: 768px) {
     html { scroll-snap-type: none; }
     section { scroll-snap-align: none; scroll-snap-stop: normal; }
 
-    .nav-bar { top: 1.5rem; left: 2rem; width: calc(100% - 4rem); }
-    .nav-bar:not([data-active-section="home"]) { opacity: 0; pointer-events: none; }
-    .nav-name { font-size: 1.8rem; }
+    .navbar { top: 1.5rem; left: 2rem; width: calc(100% - 4rem); }
+    .navbar:not([data-active-section="home"]) { opacity: 0; pointer-events: none; }
+    .brand { font-size: 1.8rem; }
 
-    .hero { padding: 0 1rem; min-height: 100vh; height: auto; }
-    .hero-cta { flex-direction: column; align-items: center; }
+    .intro { padding: 0 1rem; min-height: 100vh; height: auto; }
+    .cta-buttons { flex-direction: column; align-items: center; }
 
-    .about, .experience { min-height: 100vh; height: auto; padding-top: 6rem; }
+    .about, .work { min-height: 100vh; height: auto; padding-top: 6rem; }
     .about { padding-bottom: 4rem; }
-    .experience { padding-bottom: 4rem; overflow: visible; }
+    .work { padding-bottom: 4rem; overflow: visible; }
 
-    .about-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-    .about-text h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-    .about-text p { font-size: 1.2rem; margin-bottom: 1.2rem; }
+    .content-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+    .text-content h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+    .text-content p { font-size: 1.2rem; margin-bottom: 1.2rem; }
 
-    .experience .container { height: auto; }
-    .experience-timeline { margin: 2rem auto 0; flex-grow: unset; justify-content: flex-start; }
-    .experience-item { padding: 2rem 0; }
-    .experience-company { font-size: 1.6rem; }
-    .experience-role { font-size: 1.15rem; }
-    .experience-period { font-size: 1rem; }
+    .work .wrapper { height: auto; }
+    .timeline { margin: 2rem auto 0; flex-grow: unset; justify-content: flex-start; }
+    .job { padding: 2rem 0; }
+    .company { font-size: 1.6rem; }
+    .role { font-size: 1.15rem; }
+    .period { font-size: 1rem; }
 
-    .projects { min-height: auto; height: auto; padding-top: 6rem; padding-bottom: 4rem; }
-    .projects-grid { gap: 1.5rem; padding: 0 1.5rem; }
+    .portfolio { min-height: auto; height: auto; padding-top: 6rem; padding-bottom: 4rem; }
+    .portfolio-grid { gap: 1.5rem; padding: 0 1.5rem; }
 
-    .project-pair {
+    .row {
         display: flex;
         gap: 1.5rem;
         overflow-x: auto;
@@ -642,9 +620,9 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 1rem;
     }
 
-    .project-pair::-webkit-scrollbar { display: none; }
+    .row::-webkit-scrollbar { display: none; }
 
-    .project-card {
+    .card {
         padding: 1.8rem;
         min-width: 300px;
         max-width: 350px;
@@ -654,40 +632,40 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto;
     }
 
-    .project-header { flex-direction: column; gap: 0.8rem; align-items: flex-start; margin-bottom: 1.2rem; }
-    .project-header h3 { font-size: 1.3rem; line-height: 1.3; width: 100%; }
-    .project-links { flex-wrap: wrap; gap: 0.6rem; width: 100%; }
-    .project-link { font-size: 0.85rem; padding: 0.5rem 1rem; }
-    .project-description { font-size: 1rem; line-height: 1.5; margin-bottom: 1.2rem; }
-    .tech-tag { font-size: 0.8rem; padding: 0.3rem 0.6rem; }
+    .card-header { flex-direction: column; gap: 0.8rem; align-items: flex-start; margin-bottom: 1.2rem; }
+    .card-header h3 { font-size: 1.3rem; line-height: 1.3; width: 100%; }
+    .links { flex-wrap: wrap; gap: 0.6rem; width: 100%; }
+    .link { font-size: 0.85rem; padding: 0.5rem 1rem; }
+    .card-description { font-size: 1rem; line-height: 1.5; margin-bottom: 1.2rem; }
+    .tag { font-size: 0.8rem; padding: 0.3rem 0.6rem; }
 
     .contact { min-height: 80vh; height: auto; padding: 6rem 0; }
-    .contact-link { font-size: 1.1rem; padding: 0.8rem 1.8rem; min-width: 140px; }
+    .social-link { font-size: 1.1rem; padding: 0.8rem 1.8rem; min-width: 140px; }
 
     .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
 }
 
 @media (max-width: 480px) {
-    .container { padding: 0 1rem; }
-    .nav-bar { top: 1.5rem; left: 1rem; width: calc(100% - 2rem); }
-    .nav-name { font-size: 1.5rem; }
+    .wrapper { padding: 0 1rem; }
+    .navbar { top: 1.5rem; left: 1rem; width: calc(100% - 2rem); }
+    .brand { font-size: 1.5rem; }
     .btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
 
-    .hero { min-height: 100vh; height: auto; padding: 4rem 1rem; }
-    .about, .experience { min-height: 100vh; height: auto; padding-top: 4rem; padding-bottom: 2rem; }
+    .intro { min-height: 100vh; height: auto; padding: 4rem 1rem; }
+    .about, .work { min-height: 100vh; height: auto; padding-top: 4rem; padding-bottom: 2rem; }
 
-    .about-text h3 { font-size: 1.6rem; margin-bottom: 1rem; }
-    .about-text p { font-size: 1.1rem; margin-bottom: 1rem; }
+    .text-content h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .text-content p { font-size: 1.1rem; margin-bottom: 1rem; }
 
-    .experience-timeline { margin: 1.5rem auto 0; }
-    .projects { height: auto; min-height: 100vh; padding-top: 4rem; padding-bottom: 2rem; }
+    .timeline { margin: 1.5rem auto 0; }
+    .portfolio { height: auto; min-height: 100vh; padding-top: 4rem; padding-bottom: 2rem; }
     .contact { min-height: 80vh; height: auto; padding: 3rem 0; }
 
     .footer { min-height: 120px; height: auto; padding: 2rem 1rem; }
-    .projects-grid { gap: 1.2rem; padding: 0 1rem; }
-    .project-pair { flex-direction: column; gap: 1.2rem; }
+    .portfolio-grid { gap: 1.2rem; padding: 0 1rem; }
+    .row { flex-direction: column; gap: 1.2rem; }
 
-    .project-card {
+    .card {
         padding: 1rem;
         margin: 0;
         max-width: 100%;
@@ -696,41 +674,39 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 
-    .project-header { flex-direction: column; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.8rem; }
-    .project-header h3 { font-size: 1.1rem; line-height: 1.4; width: 100%; }
-    .project-links { flex-wrap: wrap; gap: 0.5rem; margin-top: 0; width: 100%; }
-    .project-link { font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 12px; }
-    .project-description { font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
-    .project-tech { gap: 0.4rem; flex-wrap: wrap; }
-    .tech-tag { font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 10px; }
+    .card-header { flex-direction: column; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.8rem; }
+    .card-header h3 { font-size: 1.1rem; line-height: 1.4; width: 100%; }
+    .links { flex-wrap: wrap; gap: 0.5rem; margin-top: 0; width: 100%; }
+    .link { font-size: 0.8rem; padding: 0.4rem 0.8rem; border-radius: 12px; }
+    .card-description { font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
+    .tech-stack { gap: 0.4rem; flex-wrap: wrap; }
+    .tag { font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 10px; }
 }
 
-/* =================================================================
-   ANIMATIONS & EFFECTS
-   ================================================================= */
+/* Animations */
 
-.section-title, .about-content, .experience-item, .project-card {
+.page-title, .content-grid, .job, .card {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section-title.revealed, .about-content.revealed, .experience-item.revealed, .project-card.revealed {
+.page-title.revealed, .content-grid.revealed, .job.revealed, .card.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-.experience-item:nth-child(2) { transition-delay: 0.1s; }
-.experience-item:nth-child(3) { transition-delay: 0.2s; }
-.experience-item:nth-child(4) { transition-delay: 0.3s; }
+.job:nth-child(2) { transition-delay: 0.1s; }
+.job:nth-child(3) { transition-delay: 0.2s; }
+.job:nth-child(4) { transition-delay: 0.3s; }
 
-.project-pair:nth-child(1) .project-card:nth-child(2) { transition-delay: 0.1s; }
-.project-pair:nth-child(2) .project-card:nth-child(1) { transition-delay: 0.2s; }
-.project-pair:nth-child(2) .project-card:nth-child(2) { transition-delay: 0.3s; }
-.project-pair:nth-child(3) .project-card:nth-child(1) { transition-delay: 0.4s; }
-.project-pair:nth-child(3) .project-card:nth-child(2) { transition-delay: 0.5s; }
+.row:nth-child(1) .card:nth-child(2) { transition-delay: 0.1s; }
+.row:nth-child(2) .card:nth-child(1) { transition-delay: 0.2s; }
+.row:nth-child(2) .card:nth-child(2) { transition-delay: 0.3s; }
+.row:nth-child(3) .card:nth-child(1) { transition-delay: 0.4s; }
+.row:nth-child(3) .card:nth-child(2) { transition-delay: 0.5s; }
 
-.project-card.touch-hover {
+.card.touch-hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }

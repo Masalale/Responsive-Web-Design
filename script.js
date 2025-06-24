@@ -1,16 +1,16 @@
-// Optimized Portfolio Interactive Features
+// Portfolio interactions
 document.addEventListener('DOMContentLoaded', () => {
-    // Cache DOM elements
+    // DOM elements
     const sections = document.querySelectorAll('section[id]');
-    const navName = document.querySelector('.nav-name');
-    const navBar = document.querySelector('.nav-bar');
-    const revealElements = document.querySelectorAll('.section-title, .about-content, .experience-item, .project-card');
-    const projectCards = document.querySelectorAll('.project-card');
+    const brandName = document.querySelector('.brand');
+    const navbar = document.querySelector('.navbar');
+    const revealItems = document.querySelectorAll('.page-title, .content-grid, .job, .card');
+    const portfolioCards = document.querySelectorAll('.card');
 
-    // Section colors mapping
+    // Section colors
     const sectionColors = ['var(--burgundy)', 'var(--gold)', 'var(--burgundy)', 'var(--gold)', 'var(--burgundy)'];
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
             e.preventDefault();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Combined scroll handler for navigation and reveals
+    // Scroll handler for nav and animations
     function handleScroll() {
         const scrollY = window.scrollY;
         const viewHeight = window.innerHeight;
@@ -29,28 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach((section, index) => {
             const { offsetTop, offsetHeight, id } = section;
             
-            // Navigation update
+            // Update nav
             if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
-                navBar.setAttribute('data-active-section', id);
-                navName.style.color = sectionColors[index];
-                navName.style.textShadow = id === 'home' ? 'none' : '0 1px 2px rgba(17,16,15,0.2)';
+                navbar.setAttribute('data-active-section', id);
+                brandName.style.color = sectionColors[index];
+                brandName.style.textShadow = id === 'home' ? 'none' : '0 1px 2px rgba(17,16,15,0.2)';
             }
         });
 
-        // Reveal animations
-        revealElements.forEach(el => {
+        // Reveal elements
+        revealItems.forEach(el => {
             if (el.getBoundingClientRect().top < triggerBottom) el.classList.add('revealed');
         });
     }
 
-    // Mobile touch interactions
-    projectCards.forEach(card => {
+    // Touch interactions
+    portfolioCards.forEach(card => {
         card.addEventListener('touchstart', () => {
-            projectCards.forEach(c => c.classList.toggle('touch-hover', c === card));
+            portfolioCards.forEach(c => c.classList.toggle('touch-hover', c === card));
         }, { passive: true });
     });
 
-    // Throttled scroll event
+    // Throttled scroll
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
@@ -62,6 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // Initialize
+    // Init
     handleScroll();
 });
