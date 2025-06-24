@@ -1,6 +1,6 @@
 // Portfolio Interactive Features
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // =================================================================
     // SMOOTH SCROLLING FOR INTERNAL LINKS
     // =================================================================
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetElement = document.querySelector(this.getAttribute('href'));
             if (targetElement) {
-                targetElement.scrollIntoView({ 
+                targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // OPTIMIZED SCROLL EVENT HANDLING
     // =================================================================
     let scrollTimeout;
-    
+
     function handleScroll() {
         if (scrollTimeout) clearTimeout(scrollTimeout);
-        
+
         scrollTimeout = setTimeout(() => {
             updateActiveSection();
             handleScrollReveal();

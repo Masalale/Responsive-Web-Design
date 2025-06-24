@@ -26,7 +26,7 @@
     /* Typography */
     --font-primary: 'Boliens', serif;
     --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    
+
     /* Effects */
     --transition: all 0.3s ease;
     --border-radius: 8px;
@@ -53,7 +53,7 @@ html {
     html {
         scroll-snap-type: y mandatory;
     }
-    
+
     section {
         scroll-snap-align: start;
         scroll-snap-stop: always;
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(93, 28, 52, 0.1);
     transition: var(--transition);
     text-align: center;
-    
+
 }
 
 .experience-item:last-child {
@@ -665,7 +665,7 @@ h1, h2, h3, h4, h5, h6 {
     html {
         scroll-snap-type: none;
     }
-    
+
     section {
         scroll-snap-align: none;
         scroll-snap-stop: normal;
@@ -706,7 +706,7 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 6rem;
         padding-bottom: 4rem;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -731,17 +731,17 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 4rem;
         overflow: visible;
     }
-    
+
     .experience .container {
         height: auto;
     }
-    
+
     .experience-timeline {
         margin: 2rem auto 0;
         flex-grow: unset;
         justify-content: flex-start;
     }
-    
+
     .experience-item {
         padding: 2rem 0;
     }
@@ -765,7 +765,7 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 6rem;
         padding-bottom: 4rem;
     }
-    
+
     .projects-grid {
         gap: 1.5rem;
         padding: 0 1.5rem;
@@ -786,7 +786,7 @@ h1, h2, h3, h4, h5, h6 {
     .project-pair::-webkit-scrollbar {
         display: none;
     }
-    
+
     .project-card {
         padding: 1.8rem;
         min-width: 300px;
@@ -858,12 +858,12 @@ h1, h2, h3, h4, h5, h6 {
     html {
         scroll-snap-type: none;
     }
-    
+
     section {
         scroll-snap-align: none;
         scroll-snap-stop: normal;
     }
-    
+
     .hero,
     .about,
     .experience,
@@ -871,12 +871,12 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 100vh;
         height: auto;
     }
-    
+
     .projects {
         min-height: 100vh;
         height: auto;
     }
-    
+
     .projects-grid {
         max-height: none;
         overflow-y: visible;
@@ -888,12 +888,12 @@ h1, h2, h3, h4, h5, h6 {
     html {
         scroll-snap-type: none;
     }
-    
+
     section {
         scroll-snap-align: none;
         scroll-snap-stop: normal;
     }
-    
+
     .container {
         padding: 0 1rem;
     }
@@ -918,7 +918,7 @@ h1, h2, h3, h4, h5, h6 {
         height: auto;
         padding: 4rem 1rem;
     }
-    
+
     .about {
         min-height: 100vh;
         height: auto;
@@ -935,7 +935,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.1rem;
         margin-bottom: 1rem;
     }
-    
+
     .experience {
         min-height: 100vh;
         height: auto;
@@ -943,17 +943,17 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 2rem;
         overflow: visible;
     }
-    
+
     .experience .container {
         height: auto;
     }
-    
+
     .experience-timeline {
         margin: 1.5rem auto 0;
         flex-grow: unset;
         justify-content: flex-start;
     }
-    
+
     .projects {
         height: auto;
         min-height: 100vh;
@@ -988,7 +988,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 1.2rem;
     }
-    
+
     .project-card {
         padding: 1rem;
         margin: 0;
@@ -1057,7 +1057,7 @@ h1, h2, h3, h4, h5, h6 {
             scroll-snap-type: y mandatory;
             -webkit-scroll-snap-type: y mandatory;
         }
-        
+
         section {
             scroll-snap-align: start;
             -webkit-scroll-snap-align: start;
@@ -1065,13 +1065,13 @@ h1, h2, h3, h4, h5, h6 {
             -webkit-scroll-snap-stop: always;
         }
     }
-    
+
     @media (max-width: 768px) {
         html {
             scroll-snap-type: none;
             -webkit-scroll-snap-type: none;
         }
-        
+
         section {
             scroll-snap-align: none;
             -webkit-scroll-snap-align: none;
