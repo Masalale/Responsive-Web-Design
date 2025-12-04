@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioCards = document.querySelectorAll('.card');
 
     // Section colors
-    const sectionColors = ['var(--burgundy)', 'var(--gold)', 'var(--burgundy)', 'var(--gold)', 'var(--burgundy)'];
+    const sectionColors = ['var(--burgundy)', 'var(--gold)', 'var(--burgundy)', 'var(--gold)', 'var(--burgundy)', 'var(--gold)'];
 
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
