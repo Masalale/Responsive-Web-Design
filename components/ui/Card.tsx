@@ -1,30 +1,20 @@
-"use client";
-
-import { useRef, TouchEvent, useState } from "react";
+import { CSSProperties } from "react";
 
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  index?: number;
 }
 
-export function Card({ children, className = "" }: CardProps) {
-  const cardRef = useRef<HTMLElement>(null);
-  const [isTouchHover, setIsTouchHover] = useState(false);
-
-  const handleTouchStart = (e: TouchEvent) => {
-    setIsTouchHover(true);
-  };
-
-  const handleTouchEnd = () => {
-    setTimeout(() => setIsTouchHover(false), 300);
-  };
+export function Card({ children, className = "", index }: CardProps) {
+  const cardStyle: CSSProperties = index !== undefined 
+    ? { '--card-index': index } as CSSProperties 
+    : {};
 
   return (
     <article
-      ref={cardRef}
-      className={`card ${isTouchHover ? "touch-hover" : ""} ${className}`}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      className={`card ${className}`}
+      style={cardStyle}
     >
       {children}
     </article>

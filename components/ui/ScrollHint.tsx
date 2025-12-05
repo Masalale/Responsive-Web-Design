@@ -14,9 +14,12 @@ export function ScrollHint() {
   };
 
   return (
-    <div className="scroll-hint" onClick={handleClick} style={{ cursor: "pointer" }}>
+    <div 
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-sage text-sm flex flex-col items-center gap-2 cursor-pointer" 
+      onClick={handleClick}
+    >
       <span>Scroll down</span>
-      <div className="arrow"></div>
+      <div className="w-5 h-5 border-r-2 border-b-2 border-sage rotate-45 animate-bounce-arrow"></div>
     </div>
   );
 }

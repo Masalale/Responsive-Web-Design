@@ -16,15 +16,19 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="intro">
-      <div className="intro-content">
-        <h1 className="main-title">Clarence Ngángá Chomba</h1>
-        <h2 className="tagline">Software Engineer</h2>
-        <p className="description">
+    <section id="home" className="h-screen bg-gradient-section flex items-center justify-center text-center px-8 md:px-4 sm:px-4 relative">
+      <div className="max-w-[800px]">
+        <h1 className="hero-title font-primary text-black mb-4 tracking-tight text-shadow-subtle">
+          Clarence Ngángá Chomba
+        </h1>
+        <h2 className="hero-subtitle font-primary text-burgundy mb-8 tracking-wide">
+          Software Engineer
+        </h2>
+        <p className="hero-description text-sage leading-relaxed mb-12 max-w-[600px] mx-auto">
           Building scalable solutions through Python, web development, and system
           administration. Transforming business challenges into technical opportunities.
         </p>
-        <div className="cta-buttons">
+        <div className="flex gap-6 justify-center flex-wrap mt-8 md:flex-col md:items-center">
           <a href="#contact" className="btn btn-outline" onClick={handleContactClick}>
             Get In Touch
           </a>

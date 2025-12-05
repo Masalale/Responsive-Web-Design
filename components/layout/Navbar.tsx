@@ -56,8 +56,15 @@ export function Navbar({ sectionColors }: NavbarProps) {
   }, [sectionColors]);
 
   return (
-    <nav ref={navRef} className="navbar" data-active-section={activeSection}>
-      <div ref={brandRef} className="brand">
+    <nav 
+      ref={navRef} 
+      className="navbar fixed top-6 left-8 z-[1000] w-[calc(100%-4rem)] transition-all duration-300 sm:top-6 sm:left-4 sm:w-[calc(100%-2rem)]" 
+      data-active-section={activeSection}
+    >
+      <div 
+        ref={brandRef} 
+        className="brand-text font-brand text-burgundy tracking-wide transition-opacity duration-300"
+      >
         Clarence Chomba
       </div>
     </nav>
