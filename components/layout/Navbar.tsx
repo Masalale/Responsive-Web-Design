@@ -16,18 +16,22 @@ export function Navbar({ sectionColors }: NavbarProps) {
 
     function handleScroll() {
       const scrollY = window.scrollY;
-      const viewHeight = window.innerHeight;
-      const scrollPos = scrollY + viewHeight / 3;
+      // Use a small offset from top of viewport for instant switch at section boundary
+      const triggerPoint = scrollY + 100; // 100px from top of viewport
 
       sections.forEach((section, index) => {
         const el = section as HTMLElement;
         const { offsetTop, offsetHeight } = el;
         const id = el.getAttribute("id") || "";
+        const sectionEnd = offsetTop + offsetHeight;
 
-        if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
+        // Trigger when section boundary crosses the trigger point
+        if (triggerPoint >= offsetTop && triggerPoint < sectionEnd) {
           setActiveSection(id);
 
           if (brandRef.current) {
+            // Instant color switch - no transition
+            brandRef.current.style.transition = "none";
             brandRef.current.style.color = sectionColors[index] || "var(--burgundy)";
             brandRef.current.style.textShadow =
               id === "home" ? "none" : "0 1px 2px rgba(17,16,15,0.2)";
