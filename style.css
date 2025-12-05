@@ -402,10 +402,9 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     animation: slideInCard 0.6s ease-out forwards;
     opacity: 0;
-    flex: 1;
+    height: fit-content;
     max-width: 600px;
     min-width: 400px;
-    min-height: 240px;
 }
 
 .row:nth-child(1) .card:nth-child(1) { animation-delay: 0.1s; }
@@ -484,7 +483,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
     margin-bottom: 1rem;
     font-size: 1.1rem;
-    flex-grow: 1;
 }
 
 .tech-stack {
@@ -589,6 +587,29 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--black);
 }
 
+/* Tablet (770px - 950px) */
+
+@media (max-width: 950px) and (min-width: 769px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .card {
+        flex: 0 1 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+        width: 100%;
+        min-width: unset;
+    }
+
+    .portfolio { padding-top: 4rem; padding-bottom: 4rem; }
+    .skills { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
 /* Mobile & Tablet */
 
 @media (max-width: 768px) {
@@ -620,27 +641,26 @@ h1, h2, h3, h4, h5, h6 {
     .portfolio { min-height: auto; height: auto; padding-top: 6rem; padding-bottom: 4rem; }
     .portfolio-grid { gap: 1.5rem; padding: 0 1.5rem; }
 
+    .skills { min-height: auto; height: auto; padding-top: 6rem; padding-bottom: 4rem; }
+    .skills .portfolio-grid { gap: 1.5rem; padding: 0 1.5rem; }
+
     .row {
         display: flex;
         gap: 1.5rem;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding-bottom: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     .row::-webkit-scrollbar { display: none; }
 
     .card {
         padding: 1.8rem;
-        min-width: 300px;
-        max-width: 350px;
-        width: 300px;
+        flex: 0 1 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+        width: 100%;
         flex-shrink: 0;
-        scroll-snap-align: start;
         min-height: auto;
     }
 
@@ -671,6 +691,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .timeline { margin: 1.5rem auto 0; }
     .portfolio { height: auto; min-height: 100vh; padding-top: 4rem; padding-bottom: 2rem; }
+    .skills { height: auto; min-height: 100vh; padding-top: 4rem; padding-bottom: 2rem; }
     .contact { min-height: 80vh; height: auto; padding: 3rem 0; }
 
     .footer { min-height: 120px; height: auto; padding: 2rem 1rem; }
